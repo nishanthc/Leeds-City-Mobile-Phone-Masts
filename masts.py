@@ -10,9 +10,23 @@ def csv_to_dict():
 
 
 def ascending_by_current_rent(columns, mast_data):
-    sorted_data = sorted(mast_data, key=lambda row: float(row['Current Rent']))[:5]
-    sorted_data = list(sorted_data)
+    sorted_data = list(sorted(mast_data, key=lambda row: float(row['Current Rent']))[:5])
     display_table(columns, sorted_data)
+
+
+def specific_lease_years(columns, mast_data):
+    mast_data = list(mast_data)
+    sorted_data = []
+    for n, row in enumerate(mast_data):
+        try:
+            if int(row["Lease Years"]) == 25:
+                sorted_data.append(row)
+        except ValueError:
+            pass
+    display_table(columns, sorted_data)
+    # List Comprehension
+    total_rent = sum([(int(item["Current Rent"])) for item in sorted_data])
+    print(f"Total Rent: {total_rent}")
 
 
 def display_table(columns, sorted_data):
@@ -32,6 +46,8 @@ def execute_operation(answers):
     mast_data, columns = csv_to_dict()
     if answers["operation"] == "First 5 masts sorted by Current Rent in ascending order":
         ascending_by_current_rent(columns, mast_data)
+    elif answers["operation"] == "Masts with a 25 year lease and their total rent":
+        specific_lease_years(columns, mast_data)
 
 
 questions = [
@@ -39,7 +55,7 @@ questions = [
                   message="Which operation would you like to run?",
                   choices=[
                       'First 5 masts sorted by Current Rent in ascending order',
-                      'Large',
+                      'Masts with a 25 year lease and their total rent',
                       'Standard',
                       'Medium',
                       'Small',
