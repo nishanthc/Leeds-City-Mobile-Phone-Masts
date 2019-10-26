@@ -21,9 +21,8 @@ def csv_to_dict(masts_data_csv):
 
 def ascending_by_current_rent(columns, mast_data):
     sorted_data = list(sorted(mast_data, key=lambda row: float(row['Current Rent']))[:5])
-    tables = []
-    tables.append(display_table(columns, sorted_data))
-    return sorted_data, [display_table(columns, sorted_data)]
+    tables = [display_table(columns, sorted_data)]
+    return sorted_data, tables
 
 
 def specific_lease_years(columns, mast_data):
@@ -40,7 +39,7 @@ def specific_lease_years(columns, mast_data):
     # List Comprehension
     total_rent = sum([(int(item["Current Rent"])) for item in sorted_data])
     tables.append(display_table(["Total Rent"], [[total_rent]]))
-    return sorted_data, total_rent, [tables]
+    return sorted_data, total_rent, tables
 
 
 def tenant_mast_count(mast_data):
@@ -100,9 +99,9 @@ def display_table(columns, sorted_data):
         for row in table_data:
             for n, cell in enumerate(row):
                 if isinstance(cell, str) and not isinstance(sorted_data[0], list):
-                    row[n] = textwrap.shorten(cell, width=22, placeholder="...")
+                    row[n] = textwrap.shorten(cell, width=18, placeholder="...")
         table = AsciiTable(table_data)
-        print(table.table)
+        return table.table
 
 
 def ask_question():
@@ -130,6 +129,7 @@ def execute_operation(answers):
     mast_data, columns = csv_to_dict(masts_data_csv)
 
     try:
+        print(answers["operation"])
 
         if answers["operation"] == "First 5 masts sorted by Current Rent in ascending order":
             sorted_data, tables = ascending_by_current_rent(columns, mast_data)
@@ -139,15 +139,13 @@ def execute_operation(answers):
             dictionaries, tables = tenant_mast_count(mast_data)
         elif answers["operation"] == "Leases starting between 1st of June 1999 and 31st August 2007":
             sorted_data, tables = leases_between_dates(columns, mast_data)
-
         try:
             for dict in dictionaries:
                 pprint(dict)
         except NameError:
             pass
-
         for table in tables:
-            table
+            print(table)
 
         ask_question()
     except TypeError:
