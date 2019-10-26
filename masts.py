@@ -14,8 +14,8 @@ from terminaltables import AsciiTable
 masts_data_csv = "data/mobile_phone_masts.csv"
 
 
-def csv_to_dict(masts_data_csv):
-    csv_dictionary = csv.DictReader(open(masts_data_csv))
+def csv_to_dict(csv_file):
+    csv_dictionary = csv.DictReader(open(csv_file))
     return csv_dictionary, csv_dictionary.fieldnames
 
 
@@ -140,8 +140,8 @@ def execute_operation(answers):
         elif answers["operation"] == "Leases starting between 1st of June 1999 and 31st August 2007":
             sorted_data, tables = leases_between_dates(columns, mast_data)
         try:
-            for dict in dictionaries:
-                pprint(dict)
+            for dict_item in dictionaries:
+                pprint(dict_item)
         except NameError:
             pass
         for table in tables:

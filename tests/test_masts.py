@@ -27,8 +27,8 @@ def test_tenant_mast_count():
     dictionaries, tables = tenant_mast_count(mast_data)
     assert dictionaries[0]["CTIL (Vodafone/O2/T Mobile) Cornerstone Telecommunications Infrastructure Ltd"] == 5
 
+
 def test_leases_between_dates():
     mast_data, columns = csv_to_dict(masts_data_csv)
     sorted_data, tables = leases_between_dates(columns, mast_data)
     assert int(sorted_data[0]["Units Reference"]) == 10
-
