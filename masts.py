@@ -119,7 +119,7 @@ def ask_question():
     ]
     if sys.stdout.isatty():
         answers = inquirer.prompt(questions)
-        # os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
         execute_operation(answers)
     else:
