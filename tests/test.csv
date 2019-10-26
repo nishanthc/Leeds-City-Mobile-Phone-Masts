@@ -1,0 +1,11 @@
+Units Reference,Unit Name,Tenant Name,Property Name,Property Address,Lease Start Date,Lease End Date,Lease Years,Next Rent Review,Current Rent,Unit type
+1,"Baileys Towers, Bailey Lane ",CTIL (Vodafone/O2/T Mobile) Cornerstone Telecommunications Infrastructure Ltd,Bailey Lane,LS14 6PY,31-Mar-15,n/a,4,31-Mar-20,0,Antenna
+2,Baileys Towers Bailey Lane,The Office of Communications (Ofcom),Bailey Lane,LS14 6PY,14-Jan-11,13-Jan-14,2,n/a,1,Antenna
+3,Barncroft Court,CTIL (Vodafone/O2/T Mobile) Cornerstone Telecommunications Infrastructure Ltd,Barncroft Court,LS14 1HT,31-Mar-15,n/a,0,31-Mar-20,3,Antenna
+4,Barncroft Grange Site,CTIL (Vodafone/O2/T Mobile) Cornerstone Telecommunications Infrastructure Ltd,Barncroft Grange,LS14 1HS,31-Mar-15,n/a,0,31-Mar-20,5,Antenna
+5,Barncroft Grange,Internexus Networks Ltd,Barncroft Grange,LS14 1HS,08-Feb-18,07-Feb-28,10,08-Feb-21,4,Tele Comm
+6,Barncroft Towers,Everything Everywhere Ltd & Hutchinson 3G UK (MBNL),Barncroft Towers,LS14 1HR,01-Aug-09,31-Jul-19,25,01-Aug-15,2,Antenna
+7,Beevers Court,M24 (Seven) Metronet UK Ltd,Beevers Court,LS16 6NX,12-Aug-10,11-Aug-20,10,12-Aug-16,6,Antenna
+8,Brignall Croft,Internexus Networks Ltd,Brignall Croft,LS9 7EX,13-Aug-15,12-Aug-25,10,13-Aug-18,7,Tele Comm
+9,Burnsall Gardens,CTIL (Vodafone/O2/T Mobile) Cornerstone Telecommunications Infrastructure Ltd,Burnsall Gardens,LS12 3NY,31-Mar-15,n/a,0,31-Mar-20,8,Antenna
+10,Burnsall Grange,CTIL (Vodafone/O2/T Mobile) Cornerstone Telecommunications Infrastructure Ltd,Burnsall Grange,LS12 3LG,26-Jul-07,25-Jul-32,25,25-Jul-12,9,Antenna
