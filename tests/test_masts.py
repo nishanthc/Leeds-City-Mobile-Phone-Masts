@@ -19,6 +19,7 @@ def test_specific_lease_years():
     for row in sorted_data:
         specified_lease_masts.append((int(row["Units Reference"])))
     assert specified_lease_masts == [6, 10]
+    assert total_rent == 11
 
 
 def test_tenant_mast_count():
